@@ -1,0 +1,16 @@
+<!-- Componente reutilizable -->
+  <div class="card" style="width: 18rem; margin: 10px auto;">
+    <!-- Recivimos la data de un page padre por medio de un Input -->
+    <img [src]="data?.image" class="card-img-top" [alt]="data?.name">
+    <div class="card-body">
+      <h5 class="card-title">No. {{data?.id}} - {{data?.name}}</h5>
+      <ul>
+        <li>{{data?.status}}</li>
+        <li>{{data?.species}}</li>
+        <li>{{data?.gender}}</li>
+      </ul>
+      <!-- Dependiendo de la flag de tipo bool recivida en un input de un padre realizar las sentencias if -->
+      <button *ngIf="flagVerMas" #boton type="button" class="btn btn-success"  [routerLink]="'/examen/personaje/'+data?.id">Ver mas</button>
+      <button *ngIf="!flagVerMas" type="button" class="btn btn-success" routerLink="/examen/personajes">Regresar</button>
+    </div>
+  </div>

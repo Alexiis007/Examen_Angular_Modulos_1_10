@@ -1,0 +1,25 @@
+<div >
+    <h1 style="text-align: center;">Seccion Formulaario con ngModel</h1>
+    <!-- Componente del formulario. Recivimos los valores que emite en nuestras variables nombre y edad -->
+    <shared-formulario (emitNombre)="valoresNombre($event)" (emitEdad)="valorEdad($event)"/>
+    <!-- Una vez recividas las mostramos en pantalla -->
+    <h4 style="text-align: center;">Impresiones aqui: {{nombre}} - {{edad}} </h4>
+    <div style="width: 100%; text-align: center;" >
+        <span>(Esto usa localStorage)</span>
+    </div>
+    <hr>
+</div>
+<h1 style="text-align: center;">Seccion API</h1>
+<div style="width: 100%; text-align: center;">
+    <!-- Botones de cambio de pagina, ejecutan el metodo changePageen base a una URL guardada previamente en la ultima peticion -->
+    <button type="button" class="btn btn-success" style="margin: 10px;" (click)="changePage(prevUrl)">Anterior</button>
+    <button type="button" class="btn btn-success" style="margin: 10px;" (click)="changePage(nextUrl)">Next</button></div>
+    <!-- Recorremos la data y la mandamos por separado (por personaje) a el componente card para que se muestre -->
+<div *ngFor="let personaje of data">
+    <examen-tarjeta [data]="personaje"/>
+</div>
+<!-- Botones de cambio de pagina, ejecutan el metodo changePageen base a una URL guardada previamente en la ultima peticion -->
+<div style="width: 100%; text-align: center;">
+    <button type="button" class="btn btn-success" style="margin: 10px;" (click)="changePage(prevUrl)">Anterior</button>
+    <button type="button" class="btn btn-success" style="margin: 10px;" (click)="changePage(nextUrl)">Next</button>
+</div>

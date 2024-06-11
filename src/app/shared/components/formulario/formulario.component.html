@@ -1,0 +1,8 @@
+<!-- Componente global -->
+<div class="d-flex flex-column mb-3" style="text-align: center; align-items: center; justify-content: center;">
+    <!-- Conectamos las variables al los inputs con ngModel -->
+    <input style="margin: 20px;" [(ngModel)]="nombre" nombre="nombre" type="text" placeholder="Nombre:">
+    <input style="margin: 20px;" [(ngModel)]="edad" edad="edad" type="text" placeholder="Edad:">
+    <!-- Ejecutamos la funcion guardar la cual emite los datos recividos en el ngModel -->
+    <button style="margin: 20px;" (click)="guardar()" type="button" class="btn btn-warning">Imprimir en pantalla</button>
+</div>
